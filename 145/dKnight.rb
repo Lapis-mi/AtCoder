@@ -1,3 +1,5 @@
+# Range 1..r が NilClassでエラーが出ていた。
+
 def knights()
   arr = gets.split(" ")
   x = arr[0].to_i
@@ -23,5 +25,3 @@ def knights()
 end
 
 knights()
-
-# r=0, r<0の場合にエラーが発生していた
