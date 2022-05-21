@@ -2,26 +2,26 @@ def knights()
   arr = gets.split(" ")
   x = arr[0].to_i
   y = arr[1].to_i
-  if (x + y) % 3 == 0
-    div = (x + y) / 3
-    sa = x - div
-    count = 0
-    bunshi = 1
-    bunbo = 1
-    (1..div).each do |num|
-      if count == sa
-        break
-        bunshi = bunshi % (10 ** 9 + 7)
-      end
-      bunshi *= div - num + 1
-      bunbo *= num
-      count += 1
-      puts num
-    end
-    puts (bunshi / bunbo) % (10 ** 9 + 7)
-  else
+
+  if (x + y) % 3 != 0
     puts 0
+  else
+    # nCrMod
+    n = (x + y) / 3
+    r = x - n
+    if r < 0 || y - n < 0
+      puts 0
+    elsif r == 0
+      puts 1
+    else
+      mod = 10 ** 9 + 7
+      numerator = ((n - r + 1)..n).inject { |result, item| result * item % mod }
+      denominator = (1..r).inject { |result, item| result * item % mod }
+      puts numerator * (denominator.pow((mod - 2), mod)) % mod
+    end
   end
 end
 
 knights()
+
+# r=0, r<0の場合にエラーが発生していた

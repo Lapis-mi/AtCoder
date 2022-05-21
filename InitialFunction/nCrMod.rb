@@ -1,21 +1,10 @@
-def COMinit()
-  max = 510000,
+def nCrMod()
+  n = 100
+  r = 50
   mod = 10 ** 9 + 7
-  fac = []
-  finv = []
-  inv = []
-
-  fac[0] = fac[1] = 1
-  finv[0] = finv[1] = 1
-  inv[1] = 1
-  i = 2
-  while i <
-        fac[i] = fac[i - 1] * i % mod
-    inv[i] = mod - inv[mod % i] * (mod / i) % mod
-    finv[i] = finv[i - 1] * inv[i] % mod
-    i += 1
-  end
-  puts "a"
+  numerator = ((n - r + 1)..n).inject { |result, item| result * item % mod }
+  denominator = (1..r).inject { |result, item| result * item % mod }
+  puts numerator * (denominator.pow((mod - 2), mod))
 end
 
-COMinit()
+nCrMod()
