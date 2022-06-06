@@ -10,5 +10,11 @@ s = gets.chomp
 # 配列として取得
 arr = gets.split(" ")
 
+# n回インプット
+arr = []
+(0..(n - 1)).each do |l|
+  arr[l] = gets.split(" ")
+end
+
 # 出力
 puts("#{a + b + c} #{s}\n")
