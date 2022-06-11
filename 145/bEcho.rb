@@ -1,7 +1,6 @@
 def echo()
-  n = gets
+  n = gets.to_i
   s = gets
-  n = n.to_i
   if n % 2 == 1
     puts "No"
   else
