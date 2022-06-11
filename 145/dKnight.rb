@@ -1,5 +1,3 @@
-# Range 1..r が NilClassでエラーが出ていた。
-
 def knights()
   arr = gets.split(" ")
   x = arr[0].to_i
