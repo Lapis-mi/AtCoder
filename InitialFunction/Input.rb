@@ -10,6 +10,9 @@ s = gets.chomp
 # 配列として取得
 arr = gets.split(" ")
 
+# 数値の配列として取得[1, 2, 3]
+line = gets.split(" ").map(&:to_i)
+
 # n回インプット
 arr = []
 (0..(n - 1)).each do |l|
