@@ -1,5 +1,5 @@
 # 整数の入力
-a = gets.to_i
+n = gets.to_i
 
 # スペース区切りの整数の入力
 n, m = gets.chomp.split(" ").map(&:to_i)
