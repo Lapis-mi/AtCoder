@@ -16,7 +16,7 @@ line = gets.split(" ").map(&:to_i)
 # n回インプット
 arr = []
 (0..(n - 1)).each do |l|
-  arr[l] = gets.split(" ")
+  arr[l] = gets.split(" ") #.map(&:to_i)
 end
 
 # 出力
