@@ -14,6 +14,7 @@ arr = gets.split(" ")
 line = gets.split(" ").map(&:to_i)
 
 # n回インプット
+n =
 arr = []
 (0..(n - 1)).each do |l|
   arr[l] = gets.split(" ") #.map(&:to_i)
