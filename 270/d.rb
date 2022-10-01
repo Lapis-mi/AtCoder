@@ -1,3 +1,5 @@
+# WA
+
 n, k = gets.chomp.split(" ").map(&:to_i)
 line = gets.split(" ").map(&:to_i).sort.reverse
 times = 0
