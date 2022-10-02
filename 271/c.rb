@@ -1,15 +1,18 @@
 n = gets.to_i
 line = gets.split(" ").map(&:to_i).sort.uniq
-len = line.length
-x = line.length / 2 # 二分
-daburi = n - line.length
-p "長さ"
-p n # 長さ
-p "ダブり"
-p daburi
-p "line[x]"
-p line[x]
-p "真ん中の数字までの項数"
-p line.index(line[x]) + 1
-p "空白"
-p line[x] - (line.index(line[x]) + 1)
+
+last = 0
+r = n + 1
+while r-last>1
+  # m巻まで読めるか
+  m = (last + r) / 2
+  # m巻までに所持している冊数
+  havingBook = ([*1..m]&line).length
+  if havingBook + (n - havingBook) / 2 >= m
+    last = m
+  else
+    r = m
+  end
+end
+
+puts last
