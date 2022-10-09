@@ -11,4 +11,4 @@ elsif judge(list[0], list[1]) && judge(list[1], list[2]) && judge(list[2], list[
   ans = "Weak"
 end
 
-puts ans
+puts ans&ans
